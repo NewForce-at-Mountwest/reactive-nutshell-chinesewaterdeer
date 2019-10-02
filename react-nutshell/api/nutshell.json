@@ -1,0 +1,108 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "username":"admin",
+            "password":"admin",
+            "email":"admin@admin.com"
+        },
+        {
+            "id": 2,
+            "username":"person",
+            "password":"person",
+            "email":"person@person.com"
+        },
+        {
+            "id": 3,
+            "username":"random",
+            "password":"random",
+            "email":"random@random.com"
+        }
+    ],
+    "news": [
+        {
+            "id": 1,
+            "title": "",
+            "synopsis": "",
+            "url":"",
+            "userId": "1"
+        },
+        {
+            "id": 2,
+            "title": "",
+            "synopsis": "",
+            "url": "",
+            "userId": "2"
+        },
+        {
+            "id": 3,
+            "title": "",
+            "synopsis": "",
+            "url": "",
+            "userId": "3"
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "name": "",
+            "location": "",
+            "date": "",
+            "userId": "1"
+        },
+        {
+            "id": 2,
+            "name": "",
+            "location": "",
+            "date": "",
+            "userId": "2"
+        },
+        {
+            "id": 3,
+            "name": "",
+            "location": "",
+            "date": "",
+            "userId": "3"
+        }
+    ],
+    "tasks": [
+        {
+            "id": 1,
+            "name": "",
+            "date": "",
+            "isCompleted": true,
+            "userId": "1"
+        },
+        {
+            "id": 2,
+            "name": "",
+            "date": "",
+            "isCompleted": true,
+            "userId": "2"
+        },
+        {
+            "id": 3,
+            "name": "",
+            "date": "",
+            "isCompleted": true,
+            "userId": "3"
+        }
+    ],
+    "messages": [
+        {
+            "id": 1,
+            "message": "",
+            "userId": "1"
+        },
+        {
+            "id": 2,
+            "message": "",
+            "userId": "2"
+        },
+        {
+            "id": 3,
+            "message": "",
+            "userId": "3"
+        }
+    ]
+}
