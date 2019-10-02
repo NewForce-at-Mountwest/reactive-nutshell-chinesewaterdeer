@@ -8,7 +8,7 @@ class Nutshell extends Component {
         return (
 		<>
 			<NavBar />
-			{/* <ApplicationViews /> */}
+			<ApplicationViews />
 		</>
 
         );
