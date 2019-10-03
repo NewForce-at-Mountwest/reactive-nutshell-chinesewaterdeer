@@ -4,13 +4,14 @@ import ApplicationViews from "./ApplicationViews"
 import './Nutshell.css'
 
 class Nutshell extends Component {
-   render() {
-       return (
-        <>
-            <NavBar />
-            {/* <ApplicationViews /> */}
-        </>
-       );
-   }
+    render() {
+        return (
+		<>
+			<NavBar />
+			<ApplicationViews />
+		</>
+
+        );
+    }
 }
 export default Nutshell
