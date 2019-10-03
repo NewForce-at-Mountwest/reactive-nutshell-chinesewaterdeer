@@ -45,14 +45,10 @@ class EventList extends Component {
         </section>
 
         <div className="container-cards">
-          {this.state.events.map(event => (
-            <EventCard
-              key={event.id}
-              event={event}
-              deleteEvent={this.deleteEvent}
-            />
-          ))}
-        </div>
+                {this.state.events.map(singleEvent =>
+
+                <EventCard key={singleEvent.id} eventProp={singleEvent} deleteEvent={this.deleteEvent} {...this.props} /> )}
+            </div>
       </>
     );
   }

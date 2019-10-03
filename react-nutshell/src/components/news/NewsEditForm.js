@@ -1,13 +1,14 @@
 import React, { Component } from "react"
-import EventManager from "../../modules/EventManager"
-import "./EventForm.css"
+import NewsManager from "../../modules/NewsManager"
+import "./NewsForm.css"
 
-class EventEditForm extends Component {
+class NewsEditForm extends Component {
     //set the initial state
     state = {
-      eventName: "",
-      location: "",
-      date: "",
+      title: "",
+      synopsis: "",
+      url: "",
+      user: "",
       loadingStatus: true,
     };
 
@@ -17,33 +18,33 @@ class EventEditForm extends Component {
       this.setState(stateToChange)
     }
 
-    updateExistingEvent = evt => {
+    updateExistingNewsArticle = evt => {
       evt.preventDefault()
       this.setState({ loadingStatus: true });
-      const editedEvent = {
-        id: this.props.match.params.eventId,
-        name: this.state.eventName,
-        location: this.state.location,
-        date: this.state.date,
+      const editedNewsArticle = {
+        id: this.props.match.params.newId,
+        title: this.state.title,
+        synopsis: this.state.synopsis,
+        url: this.state.url,
         userId: 1,
         active: true
-
       };
 
-      EventManager.update(editedEvent)
-      .then(() => this.props.history.push("/events"))
+      NewsManager.update(editedNewsArticle)
+      .then(() => this.props.history.push("/news"))
     }
 
     componentDidMount() {
-      EventManager.get(this.props.match.params.eventId)
-      .then(event => {
+      NewsManager.get(this.props.match.params.newId)
+      .then(newsArticle => {
           this.setState({
-            eventName: event.name,
-            location: event.location,
-            date: event.date,
-            user: event.userId,
+            title: newsArticle.title,
+            synopsis: newsArticle.synopsis,
+            url: newsArticle.url,
+            user: newsArticle.userId,
             active: true,
             loadingStatus: false,
+
           });
       });
     }
@@ -54,42 +55,40 @@ class EventEditForm extends Component {
         <form>
           <fieldset>
             <div className="formgrid">
-            <input
+              <input
                 type="text"
                 required
                 className="form-control"
                 onChange={this.handleFieldChange}
-                id="eventName"
-                placeholder="Event name"
-                value={this.state.eventName}
+                id="title"
+                value={this.state.title}
               />
-              <label htmlFor="eventName">Name</label>
+              <label htmlFor="title">Article Title:</label>
 
               <input
                 type="text"
                 required
                 className="form-control"
                 onChange={this.handleFieldChange}
-                id="location"
-                placeholder="Location"
-                value={this.state.location}
+                id="synopsis"
+                value={this.state.synopsis}
               />
-              <label htmlFor="location">Location</label>
+              <label htmlFor="synopsis">Article Synopsis:</label>
+
               <input
-                type="date"
+                type="text"
                 required
                 className="form-control"
                 onChange={this.handleFieldChange}
-                id="date"
-                placeholder="Event date"
-                value={this.state.date}
+                id="url"
+                value={this.state.url}
               />
-              <label htmlFor="date">Date</label>
+              <label htmlFor="url">Article URL:</label>
             </div>
             <div className="alignRight">
               <button
                 type="button" disabled={this.state.loadingStatus}
-                onClick={this.updateExistingEvent}
+                onClick={this.updateExistingNewsArticle}
                 className="btn btn-primary"
               >Submit</button>
             </div>
@@ -100,4 +99,4 @@ class EventEditForm extends Component {
     }
 }
 
-export default EventEditForm
+export default NewsEditForm

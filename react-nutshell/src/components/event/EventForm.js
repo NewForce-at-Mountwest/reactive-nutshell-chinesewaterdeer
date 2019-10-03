@@ -27,7 +27,9 @@ class EventForm extends Component {
       const event = {
         name: this.state.eventName,
         location: this.state.location,
-        date: this.state.date
+        date: this.state.date,
+        active: true,
+        userId: 1
       };
 
       // Create the event and redirect user to event list

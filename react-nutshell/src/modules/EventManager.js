@@ -32,3 +32,4 @@ export default {
     }).then(data => data.json());
   }
 };
+

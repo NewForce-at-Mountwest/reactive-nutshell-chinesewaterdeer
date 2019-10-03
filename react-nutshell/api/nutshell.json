@@ -22,24 +22,27 @@
   "news": [
     {
       "id": 1,
-      "title": "",
-      "synopsis": "",
-      "url": "",
-      "userId": "1"
+      "title": "Life in Newforce",
+      "synopsis": "Lorem Imposum afdahlkdaf",
+      "url": "www.ddd.com",
+      "userId": "1",
+      "active": true
     },
     {
       "id": 2,
-      "title": "",
-      "synopsis": "",
-      "url": "",
-      "userId": "2"
+      "title": "Forever Coding",
+      "synopsis": "fjsaklfdksafkgdsahkgdasgd",
+      "url": "www.code.com",
+      "userId": "1",
+      "active": true
     },
     {
-      "id": 3,
-      "title": "",
-      "synopsis": "",
-      "url": "",
-      "userId": "3"
+      "title": "Jessica Ayerst: Life in the Chase Building",
+      "synopsis": "Jessica loves life in the Chase Building. Monday through Friday 9am-4pm.",
+      "url": "www.chase.com",
+      "active": true,
+      "userId": 1,
+      "id": 3
     }
   ],
   "events": [
@@ -65,10 +68,12 @@
       "userId": "3"
     },
     {
-      "name": "Concert",
+      "id": 4,
+      "name": "Bull riding",
       "location": "Huntington",
-      "date": "2019-10-17",
-      "id": 4
+      "date": "2019-10-19",
+      "userId": 1,
+      "active": true
     }
   ],
   "tasks": [
