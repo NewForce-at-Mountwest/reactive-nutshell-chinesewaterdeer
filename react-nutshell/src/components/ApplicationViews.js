@@ -3,6 +3,9 @@ import React, { Component } from 'react'
 import NewsList from './news/NewsList'
 import NewsForm from './news/NewsForm'
 import NewsEditForm from './news/NewsEditForm'
+import MessageList from './messages/MessageList'
+import MessageForm from './messages/MessageForm'
+import MessageEditForm from './messages/MessageEditForm'
 
 
 class ApplicationViews extends Component {
@@ -23,6 +26,18 @@ class ApplicationViews extends Component {
         <Route path="/news/:newId(\d+)/edit" render={props => {
             return <NewsEditForm {...props} />
           }}
+        />
+        <Route exact path="/messages" render={(props) => {
+          return <MessageList {...props} />
+        }}
+        />
+        <Route path="/messages/new" render={(props) => {
+          return <MessageForm {...props} />
+        }}
+        />
+        <Route path="/messages/:messageId(\d+)/edit" render={props => {
+          return <MessageEditForm {...props} />
+        }}
         />
         </React.Fragment>
       )
