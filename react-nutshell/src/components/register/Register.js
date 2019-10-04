@@ -88,7 +88,7 @@ class Register extends Component {
                 </button>
 
             </div>
-            
+
         </fieldset>
       </form>
     )
