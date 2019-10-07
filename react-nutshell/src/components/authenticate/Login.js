@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import LoginManager from '../../modules/LoginManager'
+import { Link } from "react-router-dom";
 // creating component to display login form and validate credentials
 class Login extends Component {
     // set state
@@ -20,11 +21,13 @@ class Login extends Component {
         // const passAuth = users.password.value
         LoginManager.getOneUser(this.state.username).then(users => {
             console.log(users)
-        if (this.state.password === users[0].password){
-        localStorage.setItem("userId", users[0].id)}
-        else {
-            alert("Invalid Password")
-        }})
+            if (this.state.password === users[0].password) {
+                localStorage.setItem("userId", users[0].id)
+            }
+            else {
+                alert("Invalid Password")
+            }
+        })
         this.props.history.push("/");
     }
     render() {
@@ -33,20 +36,22 @@ class Login extends Component {
                 <fieldset>
                     <h3>Sign In</h3>
                     <div className="xxxxx">
-                    <label htmlFor="inputUsername">Username</label>
+                        <label htmlFor="inputUsername">Username</label>
                         <input onChange={this.handleFieldChange} type="username"
-                        id="username"
-                        placeholder="Username"
-                        required=""
-                        autoFocus="" />
+                            id="username"
+                            placeholder="Username"
+                            required=""
+                            autoFocus="" />
                         <label htmlFor="inputPassword">Password</label>
                         <input onChange={this.handleFieldChange} type="password"
-                        id="password"
-                        placeholder="Password"
-                        required="" />
+                            id="password"
+                            placeholder="Password"
+                            required="" />
                     </div>
                     <button type="submit">Sign In</button>
-                    <button type="registration">Register</button>
+                    <div>
+                        <Link to={`/register`}><button>Register</button></Link>
+                    </div>
                 </fieldset>
             </form>
         )
