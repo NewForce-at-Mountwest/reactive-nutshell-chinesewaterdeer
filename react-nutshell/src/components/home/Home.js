@@ -7,8 +7,8 @@ class Home extends Component {
         return (
             <section>
 
-                <h1>Welcome To Nutshell</h1><br />
-
+                <h1 className="home-nutshell-title">Welcome To Nutshell!</h1><br />
+                <button type="logout" className="logout-btn" onClick={window.localStorage.clear()}>Log Out</button>
                 <div id="login-card">
                 </div>
             </section>
