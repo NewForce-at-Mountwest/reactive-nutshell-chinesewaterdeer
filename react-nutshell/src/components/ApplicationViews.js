@@ -1,4 +1,4 @@
-import { Route } from 'react-router-dom'
+import { Route, withRouter, Redirect } from 'react-router-dom'
 import React, { Component } from 'react'
 import NewsList from './news/NewsList'
 import NewsForm from './news/NewsForm'
@@ -6,13 +6,28 @@ import NewsEditForm from './news/NewsEditForm'
 import MessageList from './messages/MessageList'
 import MessageForm from './messages/MessageForm'
 import MessageEditForm from './messages/MessageEditForm'
+import Home from './home/Home'
+import Login from './authenticate/Login'
 
-
+// component for routing each link in the nav bar to a certain page of the application
 class ApplicationViews extends Component {
+
+    credentialAuth = () => localStorage.getItem("userId") !== null
 
     render() {
       return (
         <React.Fragment>
+          <Route exact path="/" render={(props) => {
+                    return <Login {...props} />
+                }} />
+
+                <Route exact path="/home" render={(props) => {
+                    if (this.credentialAuth()){
+                        return <Home {...props} />}
+                        else {
+                            return <Redirect to="/" />
+                        }
+                }} />
           <Route exact path="/news" render={(props) => {
             return <NewsList {...props}/>
           }} />
@@ -43,5 +58,5 @@ class ApplicationViews extends Component {
       )
     }
   }
-
-  export default ApplicationViews
+       
+export default ApplicationViews;
