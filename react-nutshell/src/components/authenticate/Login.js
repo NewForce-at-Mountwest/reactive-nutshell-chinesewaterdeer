@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import LoginManager from '../../modules/LoginManager'
+import { Link } from "react-router-dom";
 // creating component to display login form and validate credentials
 class Login extends Component {
     // set state
@@ -48,7 +49,9 @@ class Login extends Component {
                             required="" />
                     </div>
                     <button type="submit">Sign In</button>
-                    <button type="registration">Register</button>
+                    <div>
+                        <Link to={`/register`}><button>Register</button></Link>
+                    </div>
                 </fieldset>
             </form>
         )

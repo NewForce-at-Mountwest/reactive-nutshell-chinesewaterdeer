@@ -12,6 +12,12 @@ import PhotoList from './photos/PhotoList'
 import PhotoEditForm from './photos/PhotoEditForm'
 import PhotoForm from './photos/PhotoForm'
 
+// Task Imports
+import TaskList from "./task/TaskList";
+import TaskForm from "./task/TaskForm";
+import TaskEditForm from './task/TaskEditForm'
+//
+import Register from "./register/Register";
 
 // component for routing each link in the nav bar to a certain page of the application
 class ApplicationViews extends Component {
@@ -24,6 +30,13 @@ class ApplicationViews extends Component {
                 <Route exact path="/" render={(props) => {
                     return <Login {...props} />
                 }} />
+
+            <Route
+                  exact
+                  path="/register"
+                  render ={props =>{
+                      return <Register {...props}/>;
+                  }} />
 
                 <Route exact path="/home" render={(props) => {
                     if (this.credentialAuth()) {
@@ -78,6 +91,25 @@ class ApplicationViews extends Component {
                 <Route path="/messages/:messageId(\d+)/edit" render={props => {
                     return <MessageEditForm {...props} />
                 }}
+                />
+                <Route
+                    exact
+                    path="/tasks"
+                    render={props => {
+                        return <TaskList {...props} />;
+                    }}
+                />
+                <Route
+                    path="/tasks/new"
+                    render={props => {
+                        return <TaskForm {...props} />;
+                    }}
+                />
+                <Route
+                    path="/tasks/:taskId(\d+)/edit"
+                    render={props => {
+                        return <TaskEditForm {...props} />;
+                    }}
                 />
             </React.Fragment>
         )
