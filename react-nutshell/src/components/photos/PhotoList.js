@@ -46,7 +46,7 @@ class PhotoList extends Component {
                 <div className="container-cards">
                     {this.state.url.map(singlePhoto =>
 
-                    <PhotoCard key={singlePhoto.id} photoProp={singlePhoto} deletePhoto={this.deletePhoto}  /> )}
+                    <PhotoCard key={singlePhoto.id} photoProp={singlePhoto} deletePhoto={this.deletePhoto} {...this.props}  /> )}
             </div>
             </>
         )

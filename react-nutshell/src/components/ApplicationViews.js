@@ -27,16 +27,18 @@ class ApplicationViews extends Component {
     render() {
         return (
             <React.Fragment>
+                {/* Login route */}
                 <Route exact path="/" render={(props) => {
                     return <Login {...props} />
                 }} />
-
+{/* registration route */}
             <Route
                   exact
                   path="/register"
                   render ={props =>{
                       return <Register {...props}/>;
                   }} />
+                  {/* Home route + auth */}
 
                 <Route exact path="/home" render={(props) => {
                     if (this.credentialAuth()) {
@@ -46,6 +48,7 @@ class ApplicationViews extends Component {
                         return <Redirect to="/" />
                     }
                 }} />
+                {/* Photos with auth */}
                 <Route exact path="/photos" render={(props) => {
                     if (this.credentialAuth()) {
                         return <PhotoList {...props} />
@@ -55,21 +58,12 @@ class ApplicationViews extends Component {
                     }
                 }} />
                 <Route exact path="/photos/new" render={(props) => {
-                    if (this.credentialAuth()) {
                         return <PhotoForm {...props} />
-                    }
-                    else {
-                        return <Redirect to="/" />
-                    }
                 }} />
-                <Route path="/photos/:newId(/d+)/edit" render={(props) => {
-                    if (this.credentialAuth()) {
+                <Route path="/photos/:photoId(\d+)/edit" render={(props) => {
                         return <PhotoEditForm {...props} />
-                    }
-                    else {
-                        return <Redirect to="/" />
-                    }
                 }} />
+                {/* News */}
                 <Route exact path="/news" render={(props) => {
                     return <NewsList {...props} />
                 }} />

@@ -19,6 +19,7 @@ class PhotoEditForm extends Component {
       this.setState();
       const editedPhoto = {
         url: this.state.url,
+        id: this.props.match.params.photoId
       };
 
       PhotoManager.update(editedPhoto)
@@ -26,7 +27,7 @@ class PhotoEditForm extends Component {
     }
 //method for posting a photo
     componentDidMount() {
-      PhotoManager.get(this.props.match.params.newId)
+      PhotoManager.get(this.props.match.params.photoId)
       .then(photos => {
           this.setState({
             url: photos.url,
