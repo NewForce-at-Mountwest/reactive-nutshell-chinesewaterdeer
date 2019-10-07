@@ -115,5 +115,16 @@
       "userId": 1,
       "id": 5
     }
+  ],
+  "photos": [
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Common-nuts.png/290px-Common-nuts.png",
+      "id": 1
+    },
+    {
+      "url": "https://media0.giphy.com/media/3o6ZthL6AF97OxdLna/giphy.gif",
+      "userId": 1,
+      "id": 2
+    }
   ]
 }
