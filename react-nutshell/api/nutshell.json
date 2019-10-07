@@ -102,13 +102,13 @@
   "messages": [
     {
       "id": 3,
-      "message": "Is everyone going to the party tonight at Melody's place?",
-      "userId": "3"
+      "message": "Are you going to the party tonight at Melody's place?",
+      "userId": 1
     },
     {
-      "message": "Hello Again!",
-      "userId": 1,
-      "id": 4
+      "id": 4,
+      "message": "Hey Again!!!",
+      "userId": 1
     },
     {
       "message": "Yay!! We are at CRUD!",
