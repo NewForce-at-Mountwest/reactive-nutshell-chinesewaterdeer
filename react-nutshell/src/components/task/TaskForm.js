@@ -8,7 +8,7 @@ class TaskForm extends Component {
         name: "",
         date: "",
         summary: "",
-        isCompleted: false,
+        isComplete: false,
         loadingStatus: false,
     };
 
@@ -28,7 +28,7 @@ class TaskForm extends Component {
                 name: this.state.name,
                 date: this.state.date,
                 summary: this.state.summary,
-                isCompleted: false,
+                isComplete: false,
             };
 
             TaskManager.post(task)

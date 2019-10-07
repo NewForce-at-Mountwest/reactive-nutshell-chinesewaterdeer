@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 
+
 class TaskCard extends Component {
 
-// Default Card for Tasks
+
+  // Default Card for Tasks
 
   render() {
     return (
@@ -20,26 +22,26 @@ class TaskCard extends Component {
 
           <p>Summary of Task: {this.props.taskProp.summary}</p>
 
-{/* // Edit Button */}
+          {/* // Edit Button */}
 
           <Link to={`/tasks/${this.props.taskProp.id}/edit`}>
 
             <button
-              onClick= {() => this.props.editTask}
+              onClick={() => this.props.editTask}
 
             >Edit Task
             </button>
 
-{/* // Delete Button */}
-
           </Link>
 
-            <button
-              type="checkbox"
-              onClick={() => this.props.deleteTask(this.props.taskProp.id)}
+          {/* // CheckBox - Is Task Completed? - Soft Delete*/}
 
-            >Delete Task
-            </button>
+          <input
+            name="isComplete"
+            type="checkbox"
+            checked={this.props.taskProp.isComplete}
+            onChange={() => this.props.softDeleteTask(this.props.taskProp.id)} />
+          <label for="isComplete">Completed / Delete Task</label>
 
         </div>
       </div>

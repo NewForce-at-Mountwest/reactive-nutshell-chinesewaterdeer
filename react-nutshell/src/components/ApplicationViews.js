@@ -42,7 +42,9 @@ class ApplicationViews extends Component {
                         return <Redirect to="/" />
                     }
                 }} />
-{/* // Tasks Route  */}
+
+{/* // Task Routes  */}
+
                 <Route
                     exact
                     path="/tasks"
@@ -62,6 +64,8 @@ class ApplicationViews extends Component {
                         return <TaskEditForm {...props} />;
                     }}
                 />
+
+{/* // End of Task Routes  */}
 
                 <Route exact path="/news" render={(props) => {
                     return <NewsList {...props}/>

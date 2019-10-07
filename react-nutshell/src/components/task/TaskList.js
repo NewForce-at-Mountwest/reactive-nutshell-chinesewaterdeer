@@ -7,12 +7,15 @@ class TaskList extends Component {
 
     state = {
 
-        tasks: []
+        tasks: [],
+        isComplete: ""
 
     };
 
-    deleteTask = (id) => {
-        TaskManager.delete(id)
+// Soft Delete Task (by ID), Task Manager retrieves updated DB after deletion.
+
+    softDeleteTask = (id) => {
+        TaskManager.softDelete(id)
             .then(TaskManager.getAll)
             .then(parsedTasks => {
                 this.setState({
@@ -20,6 +23,8 @@ class TaskList extends Component {
                 })
             })
     }
+
+// Task DB retrieval
 
     componentDidMount() {
         console.log("TASK LIST: componentDidMount");
@@ -34,12 +39,16 @@ class TaskList extends Component {
         });
     }
 
+// Task List
+
     render () {
         console.log("TASK LIST: render");
 
             return (
                 <>
                  <section className="section-content">
+
+{/* // New Task Button */}
 
                      <button
                         type="button"
@@ -52,13 +61,20 @@ class TaskList extends Component {
 
                  </section>
 
+{/* // Render individual task card if task not completed  */}
+
                  <div className="container-cards">
-                     {this.state.tasks.map(singleTask => (
+                     {this.state.tasks.map(singleTask =>
+                     !singleTask.isComplete ? (
                          <TaskCard
                             key={singleTask.id}
-                            deleteTask={this.deleteTask}
+                            softDeleteTask={this.softDeleteTask}
                             taskProp={singleTask} />
-                     ))}
+                     ) : (
+                         null
+                     )
+
+                     )}
                  </div>
 
                 </>

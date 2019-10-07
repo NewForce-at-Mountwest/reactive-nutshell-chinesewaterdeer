@@ -19,16 +19,10 @@
       "email": "random@random.com"
     },
     {
-      "username": "nutshell1",
-      "email": "nutshell1@nutshell.com",
-      "password": "pass",
-      "id": 4
-    },
-    {
       "username": "user",
       "email": "user@user.com",
       "password": "user",
-      "id": 5
+      "id": 4
     }
   ],
   "news": [
@@ -55,14 +49,6 @@
       "active": true,
       "userId": 1,
       "id": 3
-    },
-    {
-      "title": "This is the Dawning of the Age of Aquarius",
-      "synopsis": "Age of Aquarius, Age of Aquarius",
-      "url": "www.aquarius.com",
-      "active": true,
-      "userId": 1,
-      "id": 4
     }
   ],
   "events": [
@@ -90,35 +76,42 @@
   ],
   "tasks": [
     {
-      "name": "Task #1",
-      "date": "01/08/2016",
-      "summary": "Tasky Task 1",
-      "isCompleted": false,
+      "name": "Visit Dog Park",
+      "date": "10/10/19",
+      "summary": "Take Fido to the the dog park",
+      "isComplete": false,
       "id": 1
     },
     {
-      "name": "Task #2",
-      "date": "09/08/08",
-      "summary": "Tasky Task 2",
-      "isCompleted": false,
+      "name": "Place clothes in storage",
+      "date": "10/10/19",
+      "summary": "Put summer clothes in storage for the winter",
+      "isComplete": false,
       "id": 2
+    },
+    {
+      "name": "Wash car",
+      "date": "10/11/19",
+      "summary": "Wash the car",
+      "isComplete": false,
+      "id": 3
     }
   ],
   "messages": [
     {
+      "id": 1,
+      "message": "",
+      "userId": "1"
+    },
+    {
+      "id": 2,
+      "message": "",
+      "userId": "2"
+    },
+    {
       "id": 3,
-      "message": "Is everyone going to the party tonight at Melody's place?",
+      "message": "",
       "userId": "3"
-    },
-    {
-      "message": "Hello Again!",
-      "userId": 1,
-      "id": 4
-    },
-    {
-      "message": "Yay!! We are at CRUD!",
-      "userId": 1,
-      "id": 5
     }
   ]
 }

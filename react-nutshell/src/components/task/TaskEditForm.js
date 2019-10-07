@@ -7,9 +7,11 @@ class TaskEditForm extends Component {
         name: "",
         date: "",
         summary: "",
-        isCompleted: false,
+        isComplete: false,
         loadingStatus: true,
     };
+
+// Capture input
 
     handleFieldChange = evt => {
         const stateToChange = {};
@@ -17,7 +19,7 @@ class TaskEditForm extends Component {
         this.setState(stateToChange);
     };
 
-// Update Task function - rcv input
+// Update state - With edited data
 
     updateTask = evt => {
         evt.preventDefault();
@@ -28,7 +30,7 @@ class TaskEditForm extends Component {
             name: this.state.name,
             date: this.state.date,
             summary: this.state.summary,
-            isCompleted: false,
+            isComplete: false,
         };
 
         console.log("Task Edited", editTask)
@@ -41,6 +43,8 @@ class TaskEditForm extends Component {
             );
     };
 
+//  getOne data retrieval - single object to edit (by taskId) / Set State
+
     componentDidMount() {
 
         TaskManager.getOne(this.props.match.params.taskId)
@@ -49,13 +53,13 @@ class TaskEditForm extends Component {
                     name: task.name,
                     date: task.date,
                     summary: task.summary,
-                    isCompleted: false,
+                    isComplete: false,
                     loadingStatus: false,
                 });
             });
     };
 
-// Input for Edit Task
+// Input Form to edit Task w/ Edit-Submit Button
 
     render() {
         return (

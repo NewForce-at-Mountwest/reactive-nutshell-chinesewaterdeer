@@ -13,13 +13,14 @@ class Register extends Component {
     loadingStatus: false
   }
 
-  // Update state whenever an input field is edited
+// Field change for updating state
   handleFieldChange = (evt) => {
     const stateToChange = {};
     stateToChange[evt.target.id] = evt.target.value;
     this.setState(stateToChange);
   }
 
+// Retrieve users from DB / Set state
   compononentDidMount(){
 
     RegisterManager.getAll().then(parsedUsers => {

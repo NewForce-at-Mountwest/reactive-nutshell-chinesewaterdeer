@@ -28,6 +28,16 @@ export default {
         }).then(result => result.json());
     },
 
+    softDelete(id) {
+        return fetch(`${remoteURL}/tasks/${id}`, {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({isComplete: true})
+        }).then(result => result.json());
+    },
+
     update(editTask) {
         return fetch (`${remoteURL}/tasks/${editTask.id}`, {
             method: "PUT",
