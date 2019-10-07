@@ -43,6 +43,14 @@
       "active": true,
       "userId": 1,
       "id": 3
+    },
+    {
+      "title": "This is the Dawning of the Age of Aquarius",
+      "synopsis": "Age of Aquarius, Age of Aquarius",
+      "url": "www.aquarius.com",
+      "active": true,
+      "userId": 1,
+      "id": 4
     }
   ],
   "events": [
@@ -93,19 +101,19 @@
   ],
   "messages": [
     {
-      "id": 1,
-      "message": "",
-      "userId": "1"
-    },
-    {
-      "id": 2,
-      "message": "",
-      "userId": "2"
-    },
-    {
       "id": 3,
-      "message": "",
+      "message": "Is everyone going to the party tonight at Melody's place?",
       "userId": "3"
+    },
+    {
+      "message": "Hello Again!",
+      "userId": 1,
+      "id": 4
+    },
+    {
+      "message": "Yay!! We are at CRUD!",
+      "userId": 1,
+      "id": 5
     }
   ]
 }
