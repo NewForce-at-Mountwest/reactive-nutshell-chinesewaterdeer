@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 
 class TaskCard extends Component {
+
+// Default Card for Tasks
+
   render() {
     return (
       <div className="card">
@@ -11,21 +14,33 @@ class TaskCard extends Component {
             <img src={require('./imgTask.png')} alt="Task" />
           </picture>
 
-          <h3>: <span className="card-petname">{this.props.taskProp.name}</span></h3>
+          <h3>: <span className="card-taskname">{this.props.taskProp.name}</span></h3>
 
-          <p>Breed: {this.props.animalProp.breed}</p>
+          <p>Date: {this.props.taskProp.date}</p>
 
-          <Link to={`/animals/${this.props.animalProp.id}`}>
+          <p>Summary of Task: {this.props.taskProp.summary}</p>
 
-            <button>Details</button>
+{/* // Edit Button */}
+
+          <Link to={`/tasks/${this.props.taskProp.id}/edit`}>
+
+            <button
+              onClick= {() => this.props.editTask}
+
+            >Edit Task
+            </button>
+
+{/* // Delete Button */}
 
           </Link>
 
-          <Link to={`/animals/${this.props.animalProp.id}/edit`}>
+            <button
+              type="checkbox"
+              onClick={() => this.props.deleteTask(this.props.taskProp.id)}
 
-            <button>Edit</button>
+            >Delete Task
+            </button>
 
-          </Link>
         </div>
       </div>
     );

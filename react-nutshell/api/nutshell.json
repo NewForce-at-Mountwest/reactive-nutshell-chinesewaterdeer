@@ -17,6 +17,18 @@
       "username": "random",
       "password": "random",
       "email": "random@random.com"
+    },
+    {
+      "username": "nutshell1",
+      "email": "nutshell1@nutshell.com",
+      "password": "pass",
+      "id": 4
+    },
+    {
+      "username": "user",
+      "email": "user@user.com",
+      "password": "user",
+      "id": 5
     }
   ],
   "news": [
@@ -70,25 +82,18 @@
   ],
   "tasks": [
     {
-      "id": 1,
-      "name": "",
-      "date": "",
-      "isCompleted": true,
-      "userId": "1"
+      "name": "Task #1",
+      "date": "01/08/2016",
+      "summary": "Tasky Task 1",
+      "isCompleted": false,
+      "id": 1
     },
     {
-      "id": 2,
-      "name": "",
-      "date": "",
-      "isCompleted": true,
-      "userId": "2"
-    },
-    {
-      "id": 3,
-      "name": "",
-      "date": "",
-      "isCompleted": true,
-      "userId": "3"
+      "name": "Task #2",
+      "date": "09/08/08",
+      "summary": "Tasky Task 2",
+      "isCompleted": false,
+      "id": 2
     }
   ],
   "messages": [

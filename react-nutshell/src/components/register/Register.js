@@ -1,11 +1,12 @@
 import React, { Component } from "react"
 import RegisterManager from "../../modules/RegisterManager";
+import { Link } from "react-router-dom";
 
 class Register extends Component {
 
   // Set initial state
   state = {
-    userName: "",
+    username: "",
     email: "",
     password: "",
     users: [],
@@ -28,27 +29,31 @@ class Register extends Component {
     })
   }
 
+// Create New User
+
   constructNewUser = evt => {
 
     evt.preventDefault();
 
-    if (this.state.userName === "" || this.state.email) {
+    if (this.state.username === " " || this.state.email === " " || this.state.password === " ") {
         window.alert("Please input an unique user name and e-mail address");
     } else {
         this.setState({ loadingStatus: true });
         const user = {
-            userName: this.state.userName,
+            username: this.state.username,
             email: this.state.email,
             password: this.state.password,
 
         };
 
+// Posts New User - Returns to Home
         RegisterManager.post(user).then(() =>
-            this.props.history.push("/users")
+            this.props.history.push("/home")
         );
     }
   }
 
+// Input Fields for creating a new user
 
   render() {
     return (
@@ -56,8 +61,8 @@ class Register extends Component {
         <fieldset>
             <h3>Register:</h3>
             <div className="formgrid">
-                <input onChange={this.handleFieldChange} type="userName"
-                    id="userName"
+                <input onChange={this.handleFieldChange} type="username"
+                    id="username"
                     placeholder="User Name"
                     required="" autoFocus="" />
                 <label htmlFor="inputUserName">User Name</label>
@@ -75,9 +80,13 @@ class Register extends Component {
                 <label htmlFor="inputPassword">Password</label>
             </div>
 
-            <div className="alignRight">
+{/* // Create User / Submit Button */}
 
-                <button
+            <div>
+
+                <Link to={`/home`}>
+
+                    <button
 
                     type="submit"
                     disabled={this.state.loadingStatus}
@@ -85,7 +94,9 @@ class Register extends Component {
 
                     >Submit
 
-                </button>
+                    </button>
+
+                </Link>
 
             </div>
 
