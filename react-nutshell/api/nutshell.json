@@ -17,6 +17,12 @@
       "username": "random",
       "password": "random",
       "email": "random@random.com"
+    },
+    {
+      "username": "user",
+      "email": "user@user.com",
+      "password": "user",
+      "id": 4
     }
   ],
   "news": [
@@ -75,41 +81,49 @@
       "date": "2019-10-19",
       "userId": 1,
       "active": true
+    },
+    {
+      "name": "Cruise",
+      "location": "Bahamas",
+      "date": "2019-10-26",
+      "active": true,
+      "userId": 1,
+      "id": 5
     }
   ],
   "tasks": [
     {
-      "id": 1,
-      "name": "",
-      "date": "",
-      "isCompleted": true,
-      "userId": "1"
+      "name": "Visit Dog Park",
+      "date": "10/10/19",
+      "summary": "Take Fido to the the dog park",
+      "isComplete": false,
+      "id": 1
     },
     {
-      "id": 2,
-      "name": "",
-      "date": "",
-      "isCompleted": true,
-      "userId": "2"
+      "name": "Place clothes in storage",
+      "date": "10/10/19",
+      "summary": "Put summer clothes in storage for the winter",
+      "isComplete": false,
+      "id": 2
     },
     {
-      "id": 3,
-      "name": "",
-      "date": "",
-      "isCompleted": true,
-      "userId": "3"
+      "name": "Wash car",
+      "date": "10/11/19",
+      "summary": "Wash the car",
+      "isComplete": false,
+      "id": 3
     }
   ],
   "messages": [
     {
-      "id": 1,
-      "message": "",
-      "userId": "1"
+      "id": 3,
+      "message": "Are you going to the party tonight at Melody's place?",
+      "userId": 1
     },
     {
-      "id": 2,
-      "message": "",
-      "userId": "2"
+      "id": 4,
+      "message": "Hey Again!!!",
+      "userId": 1
     },
     {
       "id": 3,

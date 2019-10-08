@@ -6,11 +6,10 @@ class NavBar extends Component {
    return (
      <header>
        <h1 className="site-title">Nutshell<br />
-         <small>Welcome to Nutshell!</small>
        </h1>
        <nav>
          <ul className="container">
-           <li><Link className="nav-link" to="/">Home</Link></li>
+           <li><Link className="nav-link" to="/home">Home</Link></li>
            <li><Link className="nav-link" to="/events">Events</Link></li>
            <li><Link className="nav-link" to="/news">News</Link></li>
            <li><Link className="nav-link" to="/tasks">Tasks</Link></li>
