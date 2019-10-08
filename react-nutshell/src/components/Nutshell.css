@@ -46,3 +46,11 @@ img{
     border-radius: 50%;
     width: 80%
 }
+
+.home-nutshell-title {
+text-align: center;
+}
+
+#login-card {
+    text-align: center;
+}

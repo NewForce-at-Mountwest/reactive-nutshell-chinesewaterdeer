@@ -23,12 +23,12 @@ class Login extends Component {
             console.log(users)
             if (this.state.password === users[0].password) {
                 localStorage.setItem("userId", users[0].id)
-            }
-            else {
+                this.props.history.push("/home");
+            } else {
                 alert("Invalid Password")
             }
         })
-        this.props.history.push("/");
+
     }
     render() {
         return (

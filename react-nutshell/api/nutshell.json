@@ -23,17 +23,21 @@
       "email": "user@user.com",
       "password": "user",
       "id": 4
+    },
+    {
+      "username": "joe",
+      "email": "joe@joe.com",
+      "password": "joe",
+      "id": 5
+    },
+    {
+      "username": "new",
+      "email": "new@new.com",
+      "password": "new",
+      "id": 6
     }
   ],
   "news": [
-    {
-      "id": 1,
-      "title": "Life in Newforce",
-      "synopsis": "Lorem Imposum afdahlkdaf",
-      "url": "www.ddd.com",
-      "userId": "1",
-      "active": true
-    },
     {
       "id": 2,
       "title": "Forever Coding",
@@ -49,6 +53,14 @@
       "active": true,
       "userId": 1,
       "id": 3
+    },
+    {
+      "title": "44t4t4t4t",
+      "synopsis": "4t4t4t4t4",
+      "url": "4t4t4t4t4t4t",
+      "active": true,
+      "userId": 1,
+      "id": 4
     }
   ],
   "events": [
@@ -95,6 +107,13 @@
       "summary": "Wash the car",
       "isComplete": false,
       "id": 3
+    },
+    {
+      "id": 4,
+      "name": "44t4t4t4t",
+      "date": "4t4t4t4t4t4t4t4t4t",
+      "summary": "4t4t4t4t4t",
+      "isComplete": true
     }
   ],
   "messages": [
@@ -112,6 +131,22 @@
       "id": 3,
       "message": "",
       "userId": "3"
+    }
+  ],
+  "photos": [
+    {
+      "url": "https://media1.giphy.com/media/C4i7J7Jhcj2xO/giphy.gif",
+      "id": 1
+    },
+    {
+      "url": "https://media.tenor.com/images/e85397e4f001f5fc426e40dfb948984b/tenor.gif",
+      "userId": 1,
+      "id": 3
+    },
+    {
+      "url": "https://media.giphy.com/media/l2JeeS75xwZBjcqK4/giphy.gif",
+      "userId": 1,
+      "id": 4
     }
   ]
 }

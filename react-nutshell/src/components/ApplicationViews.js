@@ -1,4 +1,4 @@
-import { Route, withRouter, Redirect } from 'react-router-dom'
+import { Route, Redirect } from 'react-router-dom'
 import React, { Component } from 'react'
 import NewsList from './news/NewsList'
 import NewsForm from './news/NewsForm'
@@ -8,6 +8,10 @@ import MessageForm from './messages/MessageForm'
 import MessageEditForm from './messages/MessageEditForm'
 import Home from './home/Home'
 import Login from './authenticate/Login'
+import PhotoList from './photos/PhotoList'
+import PhotoEditForm from './photos/PhotoEditForm'
+import PhotoForm from './photos/PhotoForm'
+
 // Task Imports
 import TaskList from "./task/TaskList";
 import TaskForm from "./task/TaskForm";
@@ -20,6 +24,7 @@ class ApplicationViews extends Component {
 
   credentialAuth = () => localStorage.getItem("userId") !== null
 
+   
   render() {
     return (
       <React.Fragment>
@@ -42,6 +47,16 @@ class ApplicationViews extends Component {
             return <Redirect to="/" />
           }
         }} />
+        {/* Photos with auth */}
+        <Route exact path="/photos" render={(props) => {
+                    return this.credentialAuth() ? <PhotoList {...props} /> : <Redirect to="/" />
+                }} />
+                <Route exact path="/photos/new" render={(props) => {
+                       return this.credentialAuth() ? <PhotoForm {...props} /> : <Redirect to="/" />
+                }} />
+                <Route path="/photos/:photoId(\d+)/edit" render={(props) => {
+                        return this.credentialAuth() ? <PhotoEditForm {...props} /> : <Redirect to="/" />
+                }} />
 
         {/* // Task Routes  */}
 
