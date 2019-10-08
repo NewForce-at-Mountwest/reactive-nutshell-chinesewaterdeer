@@ -66,24 +66,41 @@
   "events": [
     {
       "id": 1,
-      "name": "",
-      "location": "",
-      "date": "",
+      "name": "Los Angeles Rams vs Seattle Seahawks",
+      "location": "Seattle",
+      "date": "10/3/2019",
       "userId": "1"
     },
     {
       "id": 2,
-      "name": "",
-      "location": "",
-      "date": "",
-      "userId": "2"
+      "name": "New York Jets vs Philadelphia Eagles",
+      "location": "Philadelphia",
+      "date": "2019-10-04",
+      "userId": 1,
+      "active": true
     },
     {
       "id": 3,
-      "name": "",
-      "location": "",
-      "date": "",
+      "name": "Atlanta Falcons vs Houston Texans",
+      "location": "Houston",
+      "date": "10/6/2019",
       "userId": "3"
+    },
+    {
+      "id": 4,
+      "name": "Bull riding",
+      "location": "Huntington",
+      "date": "2019-10-19",
+      "userId": 1,
+      "active": true
+    },
+    {
+      "name": "Cruise",
+      "location": "Bahamas",
+      "date": "2019-10-26",
+      "active": true,
+      "userId": 1,
+      "id": 5
     }
   ],
   "tasks": [
