@@ -8,6 +8,12 @@ import MessageForm from './messages/MessageForm'
 import MessageEditForm from './messages/MessageEditForm'
 import Home from './home/Home'
 import Login from './authenticate/Login'
+// Task Imports
+import TaskList from "./task/TaskList";
+import TaskForm from "./task/TaskForm";
+import TaskEditForm from './task/TaskEditForm'
+//
+import Register from "./register/Register";
 
 // component for routing each link in the nav bar to a certain page of the application
 class ApplicationViews extends Component {
@@ -21,23 +27,56 @@ class ApplicationViews extends Component {
                     return <Login {...props} />
                 }} />
 
+            <Route
+                  exact
+                  path="/register"
+                  render ={props =>{
+                      return <Register {...props}/>;
+                  }} />
+
                 <Route exact path="/home" render={(props) => {
-                    if (this.credentialAuth()){
-                        return <Home {...props} />}
-                        else {
-                            return <Redirect to="/" />
-                        }
+                    if (this.credentialAuth()) {
+                        return <Home {...props} />
+                    }
+                    else {
+                        return <Redirect to="/" />
+                    }
                 }} />
-          <Route exact path="/news" render={(props) => {
-            return <NewsList {...props}/>
-          }} />
+
+{/* // Task Routes  */}
+
+                <Route
+                    exact
+                    path="/tasks"
+                    render={props => {
+                        return <TaskList {...props} />;
+                    }}
+                />
+                <Route
+                    path="/tasks/new"
+                    render={props => {
+                        return <TaskForm {...props} />;
+                    }}
+                />
+                <Route
+                    path="/tasks/:taskId(\d+)/edit"
+                    render={props => {
+                        return <TaskEditForm {...props} />;
+                    }}
+                />
+
+{/* // End of Task Routes  */}
+
+                <Route exact path="/news" render={(props) => {
+                    return <NewsList {...props}/>
+                }} />
           {/* <Route exact path="/news/:newId(\d+)" render={(props) => {
           // Pass the newsId to the NewsDetailComponent
           return <NewsDetail {...props} animalId={parseInt(props.match.params.newsId)} />
         }} /> */}
-        <Route path="/news/new" render={(props) => {
-          return <NewsForm {...props} />
-        }} />
+                <Route path="/news/new" render={(props) => {
+                    return <NewsForm {...props} />
+                }} />
         <Route path="/news/:newId(\d+)/edit" render={props => {
             return <NewsEditForm {...props} />
           }}
@@ -58,5 +97,5 @@ class ApplicationViews extends Component {
       )
     }
   }
-       
+
 export default ApplicationViews;
