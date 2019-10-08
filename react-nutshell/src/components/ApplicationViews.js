@@ -12,6 +12,10 @@ import MessageForm from './messages/MessageForm'
 import MessageEditForm from './messages/MessageEditForm'
 import Home from './home/Home'
 import Login from './authenticate/Login'
+import PhotoList from './photos/PhotoList'
+import PhotoEditForm from './photos/PhotoEditForm'
+import PhotoForm from './photos/PhotoForm'
+
 // Task Imports
 import TaskList from "./task/TaskList";
 import TaskForm from "./task/TaskForm";
@@ -24,6 +28,7 @@ class ApplicationViews extends Component {
   // Check if credentials are in local storage
   // returns true/false
   credentialAuth = () => localStorage.getItem("credentials") !== null;
+
 
   render() {
     return (
@@ -78,19 +83,19 @@ class ApplicationViews extends Component {
           exact
           path="/news"
           render={props => {
-            return <NewsList {...props} />;
+            return this.credentialAuth() ? <NewsList {...props} /> : <Redirect to="/" />
           }}
         />
         <Route
           path="/news/new"
           render={props => {
-            return <NewsForm {...props} />;
+            return this.credentialAuth() ? <NewsForm {...props} /> : <Redirect to="/" />
           }}
         />
         <Route
           path="/news/:newId(\d+)/edit"
           render={props => {
-            return <NewsEditForm {...props} />;
+            return this.credentialAuth() ? <NewsEditForm {...props} /> : <Redirect to="/" />
           }}
         />
     );
@@ -106,6 +111,19 @@ class ApplicationViews extends Component {
           render={props => {
             return <Register {...props} />;
           }} />
+
+        {/* Photos with auth */}
+        <Route exact path="/photos" render={(props) => {
+                    return this.credentialAuth() ? <PhotoList {...props} /> : <Redirect to="/" />
+                }} />
+                <Route exact path="/photos/new" render={(props) => {
+                       return this.credentialAuth() ? <PhotoForm {...props} /> : <Redirect to="/" />
+                }} />
+                <Route path="/photos/:photoId(\d+)/edit" render={(props) => {
+                        return this.credentialAuth() ? <PhotoEditForm {...props} /> : <Redirect to="/" />
+                }} />
+
+        {/* // Task Routes  */}
 
         <Route
           exact
