@@ -50,18 +50,13 @@ class ApplicationViews extends Component {
                 }} />
                 {/* Photos with auth */}
                 <Route exact path="/photos" render={(props) => {
-                    if (this.credentialAuth()) {
-                        return <PhotoList {...props} />
-                    }
-                    else {
-                        return <Redirect to="/" />
-                    }
+                    return this.credentialAuth() ? <PhotoList {...props} /> : <Redirect to="/" />
                 }} />
                 <Route exact path="/photos/new" render={(props) => {
-                        return <PhotoForm {...props} />
+                       return this.credentialAuth() ? <PhotoForm {...props} /> : <Redirect to="/" />
                 }} />
                 <Route path="/photos/:photoId(\d+)/edit" render={(props) => {
-                        return <PhotoEditForm {...props} />
+                        return this.credentialAuth() ? <PhotoEditForm {...props} /> : <Redirect to="/" />
                 }} />
                 {/* News */}
                 <Route exact path="/news" render={(props) => {

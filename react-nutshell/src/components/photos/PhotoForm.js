@@ -7,7 +7,7 @@ class PhotoForm extends Component {
         url: "",
         loadingStatus: false,
     };
-
+// method for handling field change in state
     handleFieldChange = evt => {
         const stateToChange = {};
         stateToChange[evt.target.id] = evt.target.value;

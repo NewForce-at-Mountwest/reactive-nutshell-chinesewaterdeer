@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Photos.css';
 
-
+// card containing photo information
 
 class PhotoCard extends Component {
   render() {

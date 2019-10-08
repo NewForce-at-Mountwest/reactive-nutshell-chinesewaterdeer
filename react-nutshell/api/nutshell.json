@@ -23,6 +23,12 @@
       "email": "user@user.com",
       "password": "user",
       "id": 4
+    },
+    {
+      "username": "joe",
+      "email": "joe@joe.com",
+      "password": "joe",
+      "id": 5
     }
   ],
   "news": [
@@ -123,6 +129,11 @@
       "url": "https://media.tenor.com/images/e85397e4f001f5fc426e40dfb948984b/tenor.gif",
       "userId": 1,
       "id": 3
+    },
+    {
+      "url": "https://media.giphy.com/media/l2JeeS75xwZBjcqK4/giphy.gif",
+      "userId": 1,
+      "id": 4
     }
   ]
 }
