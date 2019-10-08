@@ -3,90 +3,87 @@ import React, { Component } from "react";
 // import Home from "./home/Home";
 import EventList from "./event/EventList";
 import EventForm from "./event/EventForm";
-// import EventDetail from "./event/EventDetail";
 import EventEditForm from "./event/EventEditForm";
-import NewsList from './news/NewsList';
-import NewsForm from './news/NewsForm';
-import NewsEditForm from './news/NewsEditForm'
-
+import NewsList from "./news/NewsList";
+import NewsForm from "./news/NewsForm";
+import NewsEditForm from "./news/NewsEditForm";
 
 class ApplicationViews extends Component {
   // Check if credentials are in local storage
   // returns true/false
-//   isAuthenticated = () => localStorage.getItem("credentials") !== null;
+  credentialAuth = () => localStorage.getItem("credentials") !== null;
 
   render() {
     return (
       <React.Fragment>
         {/* <Route
           exact
-          path="/"
+          path="/home"
           render={props => {
-            return <Home />;
+            if (this.credentialAuth()) {
+              return <Home {...props} />;
+            } else {
+              return <Redirect to="/" />;
+            }
           }}
         /> */}
         <Route
           exact
           path="/events"
-          render={(props) => {
-          return <EventList {...props} />;
-            // if (this.isAuthenticated()) {
-            // } else {
-            //   return <Redirect to="/login" />;
-            }
-          }
+          render={props => {
+            return this.credentialAuth() ? (
+              <EventList {...props} />
+            ) : (
+              <Redirect to="/" />
+            );
+          }}
         />
         <Route
           path="/events/new"
-          render={(props) => {
-            return <EventForm {...props} />
-            // this.isAuthenticated() ? (
-
-            // ) : (
-            //   <Redirect to="/login" />
-            // );
-          }}
-        />
-        {/* <Route
-          path="/events/:eventId(\d+)"
-          render={(props) => {
-            return
-            // this.isAuthenticated() ? (
-              <EventDetail
-                {...props}
-                eventId={parseInt(props.match.params.eventId)}
-              />
+          render={props => {
+            return this.credentialAuth() ? (
+              <EventForm {...props} />
             ) : (
-              <Redirect to="/login" />
+              <Redirect to="/" />
             );
           }}
-        /> */}
+        />
+
         <Route
           path="/events/:eventId(\d+)/edit"
           render={props => {
-            return <EventEditForm {...props} />;
+            return this.credentialAuth() ? (
+              <EventEditForm {...props} />
+            ) : (
+              <Redirect to="/" />
+            );
           }}
         />
 
-{/* _______________________NEWS___________________________ */}
+        {/* _______________________NEWS___________________________ */}
 
-          <Route exact path="/news" render={(props) => {
-            return <NewsList {...props}/>
-          }} />
-          {/* <Route exact path="/news/:newId(\d+)" render={(props) => {
-          // Pass the newsId to the NewsDetailComponent
-          return <NewsDetail {...props} animalId={parseInt(props.match.params.newsId)} />
-        }} /> */}
-        <Route path="/news/new" render={(props) => {
-          return <NewsForm {...props} />
-        }} />
-        <Route path="/news/:newId(\d+)/edit" render={props => {
-            return <NewsEditForm {...props} />
+        <Route
+          exact
+          path="/news"
+          render={props => {
+            return <NewsList {...props} />;
           }}
         />
-        </React.Fragment>
-      )
-    }
+        <Route
+          path="/news/new"
+          render={props => {
+            return <NewsForm {...props} />;
+          }}
+        />
+        <Route
+          path="/news/:newId(\d+)/edit"
+          render={props => {
+            return <NewsEditForm {...props} />;
+          }}
+        />
+      </React.Fragment>
+    );
   }
+}
 
-  export default ApplicationViews
+export default ApplicationViews;

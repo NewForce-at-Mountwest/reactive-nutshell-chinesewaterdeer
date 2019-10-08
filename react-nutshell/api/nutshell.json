@@ -57,8 +57,9 @@
       "id": 2,
       "name": "New York Jets vs Philadelphia Eagles",
       "location": "Philadelphia",
-      "date": "10/6/2019",
-      "userId": "2"
+      "date": "2019-10-04",
+      "userId": 1,
+      "active": true
     },
     {
       "id": 3,
