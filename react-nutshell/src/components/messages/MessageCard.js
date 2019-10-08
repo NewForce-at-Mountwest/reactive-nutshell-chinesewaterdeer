@@ -11,7 +11,7 @@ class MessageCard extends Component {
                     <h3>Name: <span className="card-messageName">{this.props.messageProp.userId}</span></h3>
                     <p>Message: {this.props.messageProp.message}</p>
                     <button type="button"
-                        onClick={() => { this.props.history.push(`/messages/${this.props.messageProp.id}/edit`) }}>Edit</button>
+                        onClick={() => this.props.renderEditForm(this.props.messageProp)}>Edit</button>
                     <button type="button" onClick={() => this.props.deleteMessage(this.props.messageProp.id)}>Delete</button>
                 </div>
             </div>

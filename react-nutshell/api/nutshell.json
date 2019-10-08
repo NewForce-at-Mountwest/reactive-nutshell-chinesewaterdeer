@@ -29,17 +29,15 @@
       "email": "joe@joe.com",
       "password": "joe",
       "id": 5
+    },
+    {
+      "username": "new",
+      "email": "new@new.com",
+      "password": "new",
+      "id": 6
     }
   ],
   "news": [
-    {
-      "id": 1,
-      "title": "Life in Newforce",
-      "synopsis": "Lorem Imposum afdahlkdaf",
-      "url": "www.ddd.com",
-      "userId": "1",
-      "active": true
-    },
     {
       "id": 2,
       "title": "Forever Coding",
@@ -55,6 +53,14 @@
       "active": true,
       "userId": 1,
       "id": 3
+    },
+    {
+      "title": "44t4t4t4t",
+      "synopsis": "4t4t4t4t4",
+      "url": "4t4t4t4t4t4t",
+      "active": true,
+      "userId": 1,
+      "id": 4
     }
   ],
   "events": [
@@ -101,18 +107,25 @@
       "summary": "Wash the car",
       "isComplete": false,
       "id": 3
+    },
+    {
+      "id": 4,
+      "name": "44t4t4t4t",
+      "date": "4t4t4t4t4t4t4t4t4t",
+      "summary": "4t4t4t4t4t",
+      "isComplete": true
     }
   ],
   "messages": [
     {
-      "id": 1,
-      "message": "",
-      "userId": "1"
+      "id": 3,
+      "message": "Are you going to the party tonight at Melody's place?",
+      "userId": 1
     },
     {
-      "id": 2,
-      "message": "",
-      "userId": "2"
+      "id": 4,
+      "message": "Hey Again!!!",
+      "userId": 1
     },
     {
       "id": 3,
@@ -122,7 +135,7 @@
   ],
   "photos": [
     {
-      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Common-nuts.png/290px-Common-nuts.png",
+      "url": "https://media1.giphy.com/media/C4i7J7Jhcj2xO/giphy.gif",
       "id": 1
     },
     {
