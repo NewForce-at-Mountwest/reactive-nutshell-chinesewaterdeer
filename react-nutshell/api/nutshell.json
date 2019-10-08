@@ -99,14 +99,14 @@
   ],
   "messages": [
     {
-      "id": 1,
-      "message": "",
-      "userId": "1"
+      "id": 3,
+      "message": "Are you going to the party tonight at Melody's place?",
+      "userId": 1
     },
     {
-      "id": 2,
-      "message": "",
-      "userId": "2"
+      "id": 4,
+      "message": "Hey Again!!!",
+      "userId": 1
     },
     {
       "id": 3,
